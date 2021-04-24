@@ -1,0 +1,9 @@
+.Categories {
+  margin: 10px;
+}
+
+.Categories a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}

@@ -1,0 +1,9 @@
+.Age {
+  margin: 10px;
+}
+
+.Age a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}

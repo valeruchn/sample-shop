@@ -1,0 +1,9 @@
+.navigationLink {
+  margin-left: 10px;
+}
+
+.navigationLink a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
