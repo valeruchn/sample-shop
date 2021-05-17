@@ -1,18 +1,41 @@
 import React from 'react'
-// import Classes from './Products.module.css'
 import Product from './Product/Product.jsx'
+import Classes from './Products.module.css'
+import SearchPanel from './SearchPanel/SearchPanel.jsx'
 
-const Products = (props) => {
+const Products = ({products, totalProductsCount, pageSize, currentPage, onPageChanged}) => {
+    const pagesCount = Math.ceil(totalProductsCount / pageSize)
+    const pages = [...Array(pagesCount).keys()].map((_, i) => i + 1)
     
-    if (props.products){
-        const productElements = props.products.map(item => 
+    if (products){
+        const productElements = products.map(item => 
             <Product item={item} key={item.id} />
           )
 
         return (
+
             <div>
-                {productElements}
+                <div>
+                    <SearchPanel />
+                </div>
+                {
+                    pages.map(page => { 
+                       if(currentPage === page) {
+                        return <span 
+                            className={Classes.selectedPage} 
+                            key={page.toString()}
+                            onClick={() => onPageChanged(page)}
+                            >{page}</span>
+                       } else {
+                        return <span key={page.toString()} onClick={() => onPageChanged(page)}>{page}</span>
+                       }         
+                    })
+                }
+                <div>
+                    {productElements}
+                </div>
             </div>
+            
         )
     } else {
         return (

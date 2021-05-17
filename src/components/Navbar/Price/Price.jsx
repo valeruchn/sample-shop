@@ -14,7 +14,7 @@ const Price = (props) => {
               }}
             >
                 <Form>
-                  <div role="group" aria-labelledby="price-selected">
+                  <div>
                     <div>
                         <label>
                           <Field type="radio" name="selectedPrice" value="p1" />

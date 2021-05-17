@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 // import Classes from './UserCabinet.module.css'
 
 
