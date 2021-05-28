@@ -1,15 +1,16 @@
 import React from 'react'
 import Product from './Product/Product.jsx'
 import Classes from './Products.module.css'
-import SearchPanel from './SearchPanel/SearchPanel.jsx'
+import SearchPanel from './SearchPanel/SearchPanel2.jsx'
 
-const Products = ({products, totalProductsCount, pageSize, currentPage, onPageChanged}) => {
+const Products = 
+({products, totalProductsCount, pageSize, currentPage, onPageChanged, addProductToCart}) => {
     const pagesCount = Math.ceil(totalProductsCount / pageSize)
     const pages = [...Array(pagesCount).keys()].map((_, i) => i + 1)
     
     if (products){
         const productElements = products.map(item => 
-            <Product item={item} key={item.id} />
+            <Product item={item} addProductToCart={addProductToCart} key={item.id} />
           )
 
         return (

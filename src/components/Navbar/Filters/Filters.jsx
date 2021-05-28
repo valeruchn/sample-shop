@@ -12,7 +12,6 @@ const Filters = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const location = useLocation()
-    /* Добавить фильтр при изменении searchString */
     
     useEffect(() => {
       // Парсим URL и добавляем данные в фильтр в стейте

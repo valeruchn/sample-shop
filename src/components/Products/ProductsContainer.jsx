@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts, setProductsValues } from '../../redux/productsReduser'
+import { addToCart } from '../../redux/userReduser'
 import Products from './Products'
 
 const ProductsContainer = () => {
@@ -17,6 +18,10 @@ const ProductsContainer = () => {
         dispatch(getProducts(searchString, queryToServerString, selectedPage, pageSize))
     }
 
+    const addProductToCart = (item) => {
+        dispatch(addToCart(item))
+    }
+
     useEffect(() => {
         dispatch(getProducts(searchString, queryToServerString))
     }, [dispatch, searchString, queryToServerString])
@@ -30,6 +35,7 @@ const ProductsContainer = () => {
                 pageSize={pageSize}
                 currentPage={currentPage}
                 onPageChanged={onPageChanged}
+                addProductToCart={addProductToCart}
             />
         </div>
     )

@@ -1,20 +1,26 @@
 import React from 'react'
 // import Classes from './Product.module.css'
 
-const Product = (props) => {
+const Product = ({ item, addProductToCart }) => {
+
+
+
     return (
         <div>
             <div>
-                <h3>{props.item.title}</h3>
+                <h3>{item.title}</h3>
             </div>
             <div>
-                <img src={props.item.imageUrl} alt='img'/>
+                <img src={item.imageUrl} alt='img'/>
             </div>
             <div>
-                <span>Description: {props.item.description}</span>
+                <span>Description: {item.description}</span>
             </div>
             <div>
-                <span>Price: {props.item.price}</span>
+                <span>Price: {item.price}</span>
+            </div>
+            <div>
+                <button onClick={() => addProductToCart(item.id)}>Добавить в корзину</button>
             </div>
         </div>
     )
