@@ -2,6 +2,7 @@ import { productsAPI } from "../utils/api"
 
 const SET_STATE_PRODUCTS_VALUES = 'SET_STATE_VALUES'
 
+
 const initialState = {
     loading: false,
     items: [],

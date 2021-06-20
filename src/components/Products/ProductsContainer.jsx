@@ -15,7 +15,8 @@ const ProductsContainer = () => {
     
     const onPageChanged = (selectedPage) => {
         dispatch(setProductsValues({ currentPage: selectedPage }))
-        dispatch(getProducts(searchString, queryToServerString, selectedPage, pageSize))
+        // dispatch(getProducts(searchString, queryToServerString, selectedPage, pageSize))
+        dispatch( { type: 'LOAD_DATA', payload: { searchString, queryString: queryToServerString, currentPage: selectedPage, pageSize} } )
     }
 
     const addProductToCart = (item) => {

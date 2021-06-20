@@ -7,11 +7,14 @@ import Promoutions from './components/Promoutions/Promoutions'
 import { Route } from 'react-router'
 import UserCabinet from './components/UserCabinet/UserCabinet'
 import { sagaMiddleware } from './redux/Store'
-import { helloSaga } from './redux/sagas'
+import { watchSetProducts } from './redux/sagas'
 
 // sagaMiddleware.run(helloSaga)
 
 function App() {
+
+  sagaMiddleware.run(watchSetProducts)
+
   return (
     <div className='app-wrapper'>
       <div className='Header'>
