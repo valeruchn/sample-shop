@@ -6,6 +6,10 @@ import Navbar from './components/Navbar/Navbar'
 import Promoutions from './components/Promoutions/Promoutions'
 import { Route } from 'react-router'
 import UserCabinet from './components/UserCabinet/UserCabinet'
+import { sagaMiddleware } from './redux/Store'
+import { helloSaga } from './redux/sagas'
+
+// sagaMiddleware.run(helloSaga)
 
 function App() {
   return (
